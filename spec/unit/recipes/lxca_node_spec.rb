@@ -1,8 +1,16 @@
+#------------------------------------------------------------
+# Lenovo Copyright
 #
+# (c) Copyright Lenovo 2017.
+#
+# LIMITED AND RESTRICTED RIGHTS NOTICE:
+# If data or software is delivered pursuant a General Services
+# Administration (GSA) contract, use, reproduction, or disclosure
+# is subject to restrictions set forth in Contract No. GS-35F-05925.
+#-------------------------------------------------------------
 # Cookbook Name:: lxca
 # Spec:: lxca_node
 #
-# Copyright (c) 2016 The Authors, All Rights Reserved.
 
 require 'chefspec'
 require 'spec_helper'

@@ -1,11 +1,15 @@
-# <LENOVO COPYRIGHT TO BE INSERTED>
+#------------------------------------------------------------
+# Lenovo Copyright
+#
+# (c) Copyright Lenovo 2017.
+#
+# LIMITED AND RESTRICTED RIGHTS NOTICE:
+# If data or software is delivered pursuant a General Services
+# Administration (GSA) contract, use, reproduction, or disclosure
+# is subject to restrictions set forth in Contract No. GS-35F-05925.
+#-------------------------------------------------------------
 # Cookbook Name:: lxca
 # Recipe:: lxca_ffdc
-#
-# Copyright 2017, LENOVO
-#
-# All rights reserved - Do Not Redistribute
-#
 
 lxca_ffdc 'filter_by_uuid' do
   host 'https://10.240.29.217'
