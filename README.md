@@ -4,7 +4,7 @@ lxca cookbook is used to interact with Lenovo XClarity™ Administrator resource
 
 Lenovo XClarity™ Administrator is a centralized resource management solution that is aimed at reducing complexity, speeding response, and enhancing the availability of Lenovo® server systems and solutions. Using the lxca cookbook, you can interact with the LXCA resources such as nodes, chassis, cmms etc...
 
-In this POC, the supported functionality are:
+Supported functionality are:
 * Listing of all nodes
 * Listing of managed nodes
 * Listing of unmanaged nodes
