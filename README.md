@@ -41,7 +41,7 @@ Supported functionality are:
 
 ## Custom Resources
 
-In this POC, 3 custom resources have been implemented - lxca_node, lxca_chassis, lxca_resource
+In this Project, 3 custom resources have been implemented - lxca_node, lxca_chassis, lxca_resource
 
 
 lxca_nodes accepts the following actions:
