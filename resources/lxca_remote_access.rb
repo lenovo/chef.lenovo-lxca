@@ -53,9 +53,9 @@ end
 action :get_by_uuid do
   create_client if @client.nil?
   if new_resource.uuid.nil?
-    Chef::Log.fatal("Attribute uuid is mandatory for the action filter_by_uuid")
+    Chef::Log.fatal("Attribute uuid is mandatory for the action get_by_uuid")
   end
-  res=@client.remote_control("#{new_resource.uuid}")
+  res=@client.remote_control(new_resource.uuid)
     res.instance_variables.each do |att|
       puts "#{att} - #{res.instance_variable_get att}"
     end
