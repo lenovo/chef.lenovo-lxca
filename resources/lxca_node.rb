@@ -20,6 +20,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 ################################################################################
+require 'json'
 
 resource_name :lxca_node
 provides :lxca_node
@@ -33,6 +34,9 @@ property :auth_type, String, default: 'basic_auth'
 property :csrf_token, String
 property :uuid, String
 property :chassis, String
+property :media_type, String
+property :media_uid, String
+property :opts, Hash
 
 action_class do
   def create_client
@@ -148,4 +152,79 @@ action :turn_off_led do
     Chef::Log.fatal("Attribute uuid is mandatory when action is set to turn_off_led")
   end
   @client.turn_off_loc_led(new_resource.uuid)
+end
+
+action :retrieve_mounted_media_details do
+  create_client if @client.nil?
+  if new_resource.uuid.nil?
+    Chef::Log.fatal("Attribute uuid is mandatory")
+  end
+  res = @client.retrieve_mounted_media_details(new_resource.uuid) 
+  puts(JSON.parse(res.body))
+end
+
+action :enable_media_mount_support_thinkserver do
+  create_client if @client.nil?
+  if new_resource.uuid.nil?
+    Chef::Log.fatal("Attribute uuid is mandatory")
+  end
+  res = @client.enable_media_mount_support_thinkserver(new_resource.uuid)
+  puts(JSON.parse(res.body))
+end
+
+action :disable_media_mount_support_thinkserver do
+  create_client if @client.nil?
+  if new_resource.uuid.nil?
+    Chef::Log.fatal("Attribute uuid is mandatory")
+  end
+  res = @client.disable_media_mount_support_thinkserver(new_resource.uuid) 
+  puts(JSON.parse(res.body))
+end
+
+action :remove_all_mounted_medias_thinksystem do
+  create_client if @client.nil?
+  if new_resource.uuid.nil?
+    Chef::Log.fatal("Attribute uuid is mandatory")
+  end
+  res = @client.remove_all_mounted_medias_thinksystem(new_resource.uuid)
+  puts(JSON.parse(res.body))
+end
+
+action :mount_media_thinkserver do
+  create_client if @client.nil?
+  if new_resource.uuid.nil?
+    Chef::Log.fatal("Attribute uuid is mandatory")
+  end
+  res = @client.mount_media_thinkserver(new_resource.uuid, new_resource.opts)
+  puts(JSON.parse(res.body))
+end
+
+action :mount_media_thinksystem do
+  create_client if @client.nil?
+  if new_resource.uuid.nil?
+    Chef::Log.fatal("Attribute uuid is mandatory")
+  end
+  res = @client.mount_media_thinksystem(new_resource.uuid, new_resource.opts)
+  puts(JSON.parse(res.body))
+end
+
+action :unmount_media_thinkserver do
+  create_client if @client.nil?
+  if new_resource.uuid.nil?
+    Chef::Log.fatal("Attribute uuid is mandatory")
+  end
+  res = @client.unmount_media_thinkserver(new_resource.uuid,
+                                          new_resource.media_uid,
+                                          new_resource.media_type)
+  puts(JSON.parse(res.body))
+end
+
+action :unmount_media_thinksystem do
+  create_client if @client.nil?
+  if new_resource.uuid.nil?
+    Chef::Log.fatal("Attribute uuid is mandatory")
+  end
+  res = @client.unmount_media_thinksystem(new_resource.uuid,
+                                          new_resource.media_uid)
+  puts(JSON.parse(res.body))
 end
