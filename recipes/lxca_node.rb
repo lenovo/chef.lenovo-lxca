@@ -172,6 +172,7 @@ lxca_node 'remove_all_mounted_medias_thinksystem' do
   action :remove_all_mounted_medias_thinksystem
 end
 
+# below recipe for password less ftp
 lxca_node 'mount_media_thinksystem' do
   host 'https://10.240.29.217'
   port '443'
@@ -179,9 +180,11 @@ lxca_node 'mount_media_thinksystem' do
   login_password 'CME44ibm'
   verify_ssl 'NONE'
   uuid 'FAA6E3D494E511E6A0739B91ED670CE8'
-  opts ({ :domainName         => "10.243.8.155", 
+  opts ({ :domainName         => "", 
           :shareType          => "ftp",
-          :mediaLocation      => "/raghav/ubuntu-16.04.3-desktop-amd64.iso",
+          :mediaLocation      => "/home/test/ubuntu-16.04.3-desktop-amd64.iso",
+          :username           => "",
+          :password           => "",
           :mediaServerAddress => "10.243.8.155" })
   action  :mount_media_thinksystem
 end
@@ -195,11 +198,13 @@ lxca_node 'mount_media_thinkserver' do
   login_password 'CME44ibm'
   verify_ssl 'NONE'
   uuid 'FA59C0BBC43C3C15B9D72B94AFF52B91'
-  opts ({ :domainName         => "10.243.8.155", 
+  opts ({ :domainName         => "", 
           :shareType          => "ftp",
-          :mediaLocation      => "",
+          :mediaLocation      => "/home/test/ubuntu-16.04.3-desktop-amd64.iso",
           :mediaType          => "CD/DVD",
-          :mediaServerAddress => "" })
+          :username           => "test",
+          :password           => "test@123",
+          :mediaServerAddress => "10.243.8.152" })
   action  :mount_media_thinkserver
 end
 
