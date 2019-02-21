@@ -138,7 +138,7 @@ lxca_node 'retrieve_mounted_media_details' do
   login_user 'test'
   login_password 'CME44ibm'
   verify_ssl 'NONE'
-  uuid 'FA59C0BBC43C3C15B9D72B94AFF52B91'
+  uuid 'EAAC33576492E511B46A70E28412CA06'
   action :retrieve_mounted_media_details
 end
 
@@ -148,64 +148,52 @@ lxca_node 'enable_media_mount_support_thinkserver' do
   login_user 'test'
   login_password 'CME44ibm'
   verify_ssl 'NONE'
-  uuid 'FA59C0BBC43C3C15B9D72B94AFF52B91'
+  uuid 'EAAC33576492E511B46A70E28412CA06'
   action :enable_media_mount_support_thinkserver
 end
 
-lxca_node 'disable_media_mount_support_thinkserver' do
-  host 'https://10.240.29.217'
-  port '443'
-  login_user 'test'
-  login_password 'CME44ibm'
-  verify_ssl 'NONE'
-  uuid 'FA59C0BBC43C3C15B9D72B94AFF52B91'
-  action :disable_media_mount_support_thinkserver
-end
-
-lxca_node 'remove_all_mounted_medias_thinksystem' do
-  host 'https://10.240.29.217'
-  port '443'
-  login_user 'test'
-  login_password 'CME44ibm'
-  verify_ssl 'NONE'
-  uuid 'FA59C0BBC43C3C15B9D72B94AFF52B91'
-  action :remove_all_mounted_medias_thinksystem
-end
-
-# below recipe for password less ftp
-lxca_node 'mount_media_thinksystem' do
-  host 'https://10.240.29.217'
-  port '443'
-  login_user 'test'
-  login_password 'CME44ibm'
-  verify_ssl 'NONE'
-  uuid 'FAA6E3D494E511E6A0739B91ED670CE8'
-  opts ({ :domainName         => "", 
-          :shareType          => "ftp",
-          :mediaLocation      => "/home/test/ubuntu-16.04.3-desktop-amd64.iso",
-          :username           => "",
-          :password           => "",
-          :mediaServerAddress => "10.243.8.155" })
-  action  :mount_media_thinksystem
-end
-
 # valid mediaType values are 'CD/DVD', 'FD', 'HD'
-# valid shareType values are 'ftp', 'http', 'https', 'sftp', 'nfs', 'samba'
+# valid shareType values for thinkserver are 'nfs', 'samba'
 lxca_node 'mount_media_thinkserver' do
   host 'https://10.240.29.217'
   port '443'
   login_user 'test'
   login_password 'CME44ibm'
   verify_ssl 'NONE'
-  uuid 'FA59C0BBC43C3C15B9D72B94AFF52B91'
-  opts ({ :domainName         => "", 
-          :shareType          => "ftp",
-          :mediaLocation      => "/home/test/ubuntu-16.04.3-desktop-amd64.iso",
+  uuid 'EAAC33576492E511B46A70E28412CA06'
+  opts ({ :username           => "SYSRDR_PUXNIOCA",
+          :password           => "cm3Oaj-jQPYE5Ridqx8StVN3LX3dHA",
+          :shareType          => "samba",
+          :mediaLocation      => "/think/node55A6541A199.iso",
           :mediaType          => "CD/DVD",
-          :username           => "test",
-          :password           => "test@123",
-          :mediaServerAddress => "10.243.8.152" })
+          :domainName         => "",
+          :mediaServerAddress => "10.240.29.217" })
   action  :mount_media_thinkserver
+end
+
+lxca_node 'mount_media_thinkserver' do
+  host 'https://10.240.29.217'
+  port '443'
+  login_user 'test'
+  login_password 'CME44ibm'
+  verify_ssl 'NONE'
+  uuid 'EAAC33576492E511B46A70E28412CA06'
+  opts ({
+          :shareType          => "nfs",
+          :mediaLocation      => "/var/nfs/general/ubuntu-16.04.5-desktop-amd64.iso",
+          :mediaType          => "CD/DVD",
+          :mediaServerAddress => "10.240.29.69" })
+  action  :mount_media_thinkserver
+end
+
+lxca_node 'retrieve_mounted_media_details' do
+  host 'https://10.240.29.217'
+  port '443'
+  login_user 'test'
+  login_password 'CME44ibm'
+  verify_ssl 'NONE'
+  uuid 'EAAC33576492E511B46A70E28412CA06'
+  action :retrieve_mounted_media_details
 end
 
 lxca_node 'unmount_media_thinkserver' do
@@ -214,11 +202,79 @@ lxca_node 'unmount_media_thinkserver' do
   login_user 'test'
   login_password 'CME44ibm'
   verify_ssl 'NONE'
-  uuid 'FAA6E3D494E511E6A0739B91ED670CE8'
-  media_uid 'FA123'
+  uuid 'EAAC33576492E511B46A70E28412CA06'
   media_type 'CD/DVD'
   action :unmount_media_thinkserver
 end
+
+lxca_node 'disable_media_mount_support_thinkserver' do
+  host 'https://10.240.29.217'
+  port '443'
+  login_user 'test'
+  login_password 'CME44ibm'
+  verify_ssl 'NONE'
+  uuid 'EAAC33576492E511B46A70E28412CA06'
+  action :disable_media_mount_support_thinkserver
+end
+
+lxca_node 'retrieve_mounted_media_details' do
+  host 'https://10.240.29.217'
+  port '443'
+  login_user 'test'
+  login_password 'CME44ibm'
+  verify_ssl 'NONE'
+  uuid 'EAAC33576492E511B46A70E28412CA06'
+  action :retrieve_mounted_media_details
+end
+
+# valid mediaType values are 'CD/DVD', 'FD', 'HD'
+# valid shareType values for thinkserver are 'nfs', 'samba'
+lxca_node 'mount_media_thinksystem' do
+  host 'https://10.240.29.217'
+  port '443'
+  login_user 'test'
+  login_password 'CME44ibm'
+  verify_ssl 'NONE'
+  uuid 'FAA6E3D494E511E6A0739B91ED670CE8'
+  opts ({ :username           => "SYSRDR_PUXNIOCA",
+          :password           => "cm3Oaj-jQPYE5Ridqx8StVN3LX3dHA",
+          :shareType          => "samba",
+          :mediaLocation      => "/think/node55A6541A199.iso",
+          :mediaType          => "CD/DVD",
+          :domainName         => "",
+          :mediaServerAddress => "10.240.29.217" })
+  action  :mount_media_thinksystem
+end
+
+lxca_node 'mount_media_thinksystem' do
+  host 'https://10.240.29.217'
+  port '443'
+  login_user 'test'
+  login_password 'CME44ibm'
+  verify_ssl 'NONE'
+  uuid 'FAA6E3D494E511E6A0739B91ED670CE8'
+  opts ({
+          :domainName         => "",
+          :username           => "",
+          :password           => "",
+          :shareType          => "nfs",
+          :mediaLocation      => "/var/nfs/general/ubuntu-16.04.5-desktop-amd64.iso",
+          :mediaType          => "CD/DVD",
+          :mediaServerAddress => "10.240.29.69" })
+  action  :mount_media_thinksystem
+end
+
+
+lxca_node 'retrieve_mounted_media_details' do
+  host 'https://10.240.29.217'
+  port '443'
+  login_user 'test'
+  login_password 'CME44ibm'
+  verify_ssl 'NONE'
+  uuid 'FAA6E3D494E511E6A0739B91ED670CE8'
+  action :retrieve_mounted_media_details
+end
+
 
 lxca_node 'unmount_media_thinksystem' do
   host 'https://10.240.29.217'
@@ -227,6 +283,27 @@ lxca_node 'unmount_media_thinksystem' do
   login_password 'CME44ibm'
   verify_ssl 'NONE'
   uuid 'FAA6E3D494E511E6A0739B91ED670CE8'
-  media_uid 'FADFGH'
+  media_uid '1'
   action :unmount_media_thinksystem
 end
+
+lxca_node 'remove_all_mounted_medias_thinksystem' do
+  host 'https://10.240.29.217'
+  port '443'
+  login_user 'test'
+  login_password 'CME44ibm'
+  verify_ssl 'NONE'
+  uuid 'FAA6E3D494E511E6A0739B91ED670CE8'
+  action :remove_all_mounted_medias_thinksystem
+end
+
+lxca_node 'retrieve_mounted_media_details' do
+  host 'https://10.240.29.217'
+  port '443'
+  login_user 'test'
+  login_password 'CME44ibm'
+  verify_ssl 'NONE'
+  uuid 'FAA6E3D494E511E6A0739B91ED670CE8'
+  action :retrieve_mounted_media_details
+end
+

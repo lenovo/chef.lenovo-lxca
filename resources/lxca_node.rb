@@ -20,7 +20,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 ################################################################################
-require 'json'
+require 'pp'
 
 resource_name :lxca_node
 provides :lxca_node
@@ -160,7 +160,14 @@ action :retrieve_mounted_media_details do
     Chef::Log.fatal("Attribute uuid is mandatory")
   end
   res = @client.retrieve_mounted_media_details(new_resource.uuid) 
-  puts(JSON.parse(res.body))
+  if res.status == 200
+    pp(res.body)
+  else
+    puts("")
+    pp(res.status)
+    pp(res.reason_phrase)
+    pp(res.body)
+  end
 end
 
 action :enable_media_mount_support_thinkserver do
@@ -169,7 +176,14 @@ action :enable_media_mount_support_thinkserver do
     Chef::Log.fatal("Attribute uuid is mandatory")
   end
   res = @client.enable_media_mount_support_thinkserver(new_resource.uuid)
-  puts(JSON.parse(res.body))
+  if res.status == 200
+    pp(res.body)
+  else
+    puts("")
+    pp(res.status)
+    pp(res.reason_phrase)
+    pp(res.body)
+  end
 end
 
 action :disable_media_mount_support_thinkserver do
@@ -178,7 +192,14 @@ action :disable_media_mount_support_thinkserver do
     Chef::Log.fatal("Attribute uuid is mandatory")
   end
   res = @client.disable_media_mount_support_thinkserver(new_resource.uuid) 
-  puts(JSON.parse(res.body))
+  if res.status == 200
+    pp(res.body)
+  else
+    puts("")
+    pp(res.status)
+    pp(res.reason_phrase)
+    pp(res.body)
+  end
 end
 
 action :remove_all_mounted_medias_thinksystem do
@@ -187,7 +208,14 @@ action :remove_all_mounted_medias_thinksystem do
     Chef::Log.fatal("Attribute uuid is mandatory")
   end
   res = @client.remove_all_mounted_medias_thinksystem(new_resource.uuid)
-  puts(JSON.parse(res.body))
+  if res.status == 200
+    pp(res.body)
+  else
+    puts("")
+    pp(res.status)
+    pp(res.reason_phrase)
+    pp(res.body)
+  end
 end
 
 action :mount_media_thinkserver do
@@ -196,7 +224,15 @@ action :mount_media_thinkserver do
     Chef::Log.fatal("Attribute uuid is mandatory")
   end
   res = @client.mount_media_thinkserver(new_resource.uuid, new_resource.opts)
-  puts(JSON.parse(res.body))
+  if res.status == 200
+    sleep(10)
+    pp(res.body)
+  else
+    puts("")
+    pp(res.status)
+    pp(res.reason_phrase)
+    pp(res.body)
+  end
 end
 
 action :mount_media_thinksystem do
@@ -205,7 +241,14 @@ action :mount_media_thinksystem do
     Chef::Log.fatal("Attribute uuid is mandatory")
   end
   res = @client.mount_media_thinksystem(new_resource.uuid, new_resource.opts)
-  puts(JSON.parse(res.body))
+  if res.status == 200
+    pp(res.body)
+  else
+    puts("")
+    pp(res.status)
+    pp(res.reason_phrase)
+    pp(res.body)
+  end
 end
 
 action :unmount_media_thinkserver do
@@ -214,9 +257,15 @@ action :unmount_media_thinkserver do
     Chef::Log.fatal("Attribute uuid is mandatory")
   end
   res = @client.unmount_media_thinkserver(new_resource.uuid,
-                                          new_resource.media_uid,
                                           new_resource.media_type)
-  puts(JSON.parse(res.body))
+  if res.status == 200
+    pp(res.body)
+  else
+    puts("")
+    pp(res.status)
+    pp(res.reason_phrase)
+    pp(res.body)
+  end
 end
 
 action :unmount_media_thinksystem do
@@ -226,5 +275,12 @@ action :unmount_media_thinksystem do
   end
   res = @client.unmount_media_thinksystem(new_resource.uuid,
                                           new_resource.media_uid)
-  puts(JSON.parse(res.body))
+  if res.status == 200
+    pp(res.body)
+  else
+    puts("")
+    pp(res.status)
+    pp(res.reason_phrase)
+    pp(res.body)
+  end
 end
