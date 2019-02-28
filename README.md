@@ -20,6 +20,9 @@ Supported functionality are:
 * Listing of managed chassis
 * Listing of unmanaged chassis
 * Listing and filtering of chassis using a uuid
+* mount media to managed nodes
+* Update firmware updates repository
+* Update management server updates
 
 ## Requirements
 
