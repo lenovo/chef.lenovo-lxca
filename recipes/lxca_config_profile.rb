@@ -25,41 +25,41 @@
 # Recipe:: lxca_config_profile
 
 lxca_config_profile 'list_all' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'USERID'
-  login_password 'Passw0rd'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   action :discover_all
 end
 
 lxca_config_profile 'filter_by_profileid' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'USERID'
-  login_password 'Passw0rd'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   id '68'
   action :filter_by_id
 end
 
 lxca_config_profile 'activate_config_profile' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'USERID'
-  login_password 'Passw0rd'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   id '68'
-  endpoint_uuid '46920C143355486F97C19A34ABC7D746_bay10'
-  restart 'immediate' 
+  endpoint_uuid '<ENDPOINT_UUID>'
+  restart 'immediate'
   action :activate_config_profile
 end
 
 lxca_config_profile 'rename_config_profile' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'USERID'
-  login_password 'Passw0rd'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   id '68'
   profile_name 'name_from_chef'
@@ -67,10 +67,10 @@ lxca_config_profile 'rename_config_profile' do
 end
 
 lxca_config_profile 'unassign_config_profile' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'USERID'
-  login_password 'Passw0rd'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   id '68'
   power_down 'False'
@@ -80,10 +80,10 @@ lxca_config_profile 'unassign_config_profile' do
 end
 
 lxca_config_profile 'delete_config_profile' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'USERID'
-  login_password 'Passw0rd'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   id '68'
   action :'delete_config_profile'

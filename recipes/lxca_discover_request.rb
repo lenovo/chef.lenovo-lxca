@@ -25,20 +25,20 @@
 # Recipe:: lxca_discover_request
 
 lxca_discover_request 'discover_manageable_devices' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'USERID'
-  login_password 'Passw0rd'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
-  ip_addresses ['10.240.74.210']
+  ip_addresses ['<IP_ADDRESS>']
   action :discover_manageable_devices
 end
 
 lxca_discover_request 'monitor_discover_request' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'USERID'
-  login_password 'Passw0rd'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   job_id '5878'
   action :monitor_discover_request

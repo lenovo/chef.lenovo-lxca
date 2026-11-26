@@ -34,68 +34,68 @@
 # updatedDate. Returns the date when the last update was performed.
 
 lxca_management_server_updates 'get_updates_info' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'test'
-  login_password 'CME44ibm'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   action :get_updates_info
 end
 
 lxca_management_server_updates 'get_updates_info' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'test'
-  login_password 'CME44ibm'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   action :get_updates_info
   key 'importDir'
 end
 
 lxca_management_server_updates 'delete_updates' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'test'
-  login_password 'CME44ibm'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   action :delete_updates
   fixids ['lnvgy_sw_lxca_thinksystemrepo10-2.0.0_anyos_noarch', 'lnvgy_sw_lxca_svcshell1-2.0.0_anyos_noarch']
 end
 
 lxca_management_server_updates 'download_updates' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'test'
-  login_password 'CME44ibm'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   action :download_updates
   fixids ['lnvgy_sw_lxca_thinksystemrepo10-2.0.0_anyos_noarch', 'lnvgy_sw_lxca-fw-repository-pack_1-1.0.1_anyos_noarch']
 end
 
 lxca_management_server_updates 'apply_updates' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'test'
-  login_password 'CME44ibm'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   action :apply_updates
   fixids ['lnvgy_sw_lxca_thinksystemrepo10-2.0.0_anyos_noarch']
 end
 
 lxca_management_server_updates 'refresh_updates_catalog' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'test'
-  login_password 'CME44ibm'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   action :refresh_updates_catalog
 end
 
 lxca_management_server_updates 'import_updates' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'test'
-  login_password 'CME44ibm'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   action :import_updates
   files ["/home/lenovo/lnvgy_sw_lxca_systemxrepo13-2.2.0_anyos_noarch.chg",

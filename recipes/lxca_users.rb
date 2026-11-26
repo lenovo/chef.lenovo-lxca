@@ -25,21 +25,21 @@
 # Recipe:: lxca_job
 
 lxca_users 'list_all' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'USERID'
-  login_password 'Passw0rd'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   action :discover_all
 end
 
 lxca_users 'filter_by_id' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'USERID'
-  login_password 'Passw0rd'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
-  id 'aad6a497-566c-4323-a08e-6fd939defb54'
+  id '<USER_ID>'
   action :filter_by_id
 end
 
