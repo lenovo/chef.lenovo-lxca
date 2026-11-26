@@ -25,234 +25,234 @@
 # Recipe:: lxca_node
 
 lxca_node 'list_all' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'USERID'
-  login_password 'Passw0rd'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   action :discover_all
 end
 
 lxca_node 'list_managed' do
-  host 'https://10.243.10.75'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'Admin'
-  login_password 'Lenovo123'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   action :discover_managed
 end
 
 lxca_node 'list_unmanaged' do
-  host 'https://10.243.10.75'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'Admin'
-  login_password 'Lenovo123'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   action :discover_unmanaged
 end
 
 lxca_node 'filter_by_chassis' do
-  host 'https://10.243.10.75'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'Admin'
-  login_password 'Lenovo123'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   action :filter_by_chassis
-  chassis 'F44E92339683385A8D97CD6348A6F45F'
+  chassis '<UUID>'
 end
 
 lxca_node 'filter_by_uuid' do
-  host 'https://10.243.10.75'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'Admin'
-  login_password 'Lenovo123'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   action :filter_by_uuid
-  uuid 'FA59C0BBC43C3C15B9D72B94AFF52B91'
+  uuid '<UUID>'
 end
 
 
 lxca_node 'power_on' do
-  host 'https://10.243.10.75'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'Admin'
-  login_password 'Lenovo123'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
-  uuid 'FA59C0BBC43C3C15B9D72B94AFF52B91'
+  uuid '<UUID>'
   action :power_on
 end
 
 lxca_node 'power_off' do
-  host 'https://10.243.10.75'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'Admin'
-  login_password 'Lenovo123'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
-  uuid 'FA59C0BBC43C3C15B9D72B94AFF52B91'
+  uuid '<UUID>'
   action :power_off
 end
 
 lxca_node 'power_restart' do
-  host 'https://10.243.10.75'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'Admin'
-  login_password 'Lenovo123'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
-  uuid 'FA59C0BBC43C3C15B9D72B94AFF52B91'
+  uuid '<UUID>'
   action :power_restart
 end
 
 lxca_node 'blink_led' do
-  host 'https://10.243.10.75'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'Admin'
-  login_password 'Lenovo123'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
-  uuid 'FA59C0BBC43C3C15B9D72B94AFF52B91'
+  uuid '<UUID>'
   action :blink_led
 end
 
 lxca_node 'turn_on_led' do
-  host 'https://10.243.10.75'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'Admin'
-  login_password 'Lenovo123'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
-  uuid 'FA59C0BBC43C3C15B9D72B94AFF52B91'
+  uuid '<UUID>'
   action :turn_on_led
 end
 
 lxca_node 'turn_off_led' do
-  host 'https://10.243.10.75'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'Admin'
-  login_password 'Lenovo123'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
-  uuid 'FA59C0BBC43C3C15B9D72B94AFF52B91'
+  uuid '<UUID>'
   action :turn_off_led
 end
 
 lxca_node 'retrieve_mounted_media_details' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'test'
-  login_password 'CME44ibm'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
-  uuid 'EAAC33576492E511B46A70E28412CA06'
+  uuid '<UUID>'
   action :retrieve_mounted_media_details
 end
 
 lxca_node 'enable_media_mount_support_thinkserver' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'test'
-  login_password 'CME44ibm'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
-  uuid 'EAAC33576492E511B46A70E28412CA06'
+  uuid '<UUID>'
   action :enable_media_mount_support_thinkserver
 end
 
 # valid mediaType values are 'CD/DVD', 'FD', 'HD'
 # valid shareType values for thinkserver are 'nfs', 'samba'
 lxca_node 'mount_media_thinkserver' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'test'
-  login_password 'CME44ibm'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
-  uuid 'EAAC33576492E511B46A70E28412CA06'
-  opts ({ :username           => "SYSRDR_PUXNIOCA",
-          :password           => "cm3Oaj-jQPYE5Ridqx8StVN3LX3dHA",
+  uuid '<UUID>'
+  opts ({ :username           => "<DEVICE_USERNAME>",
+          :password           => "<DEVICE_PASSWORD>",
           :shareType          => "samba",
           :mediaLocation      => "/think/node55A6541A199.iso",
           :mediaType          => "CD/DVD",
           :domainName         => "",
-          :mediaServerAddress => "10.240.29.217" })
+          :mediaServerAddress => "<IP_ADDRESS>" })
   action  :mount_media_thinkserver
 end
 
 lxca_node 'mount_media_thinkserver' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'test'
-  login_password 'CME44ibm'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
-  uuid 'EAAC33576492E511B46A70E28412CA06'
+  uuid '<UUID>'
   opts ({
           :shareType          => "nfs",
           :mediaLocation      => "/var/nfs/general/ubuntu-16.04.5-desktop-amd64.iso",
           :mediaType          => "CD/DVD",
-          :mediaServerAddress => "10.240.29.69" })
+          :mediaServerAddress => "<IP_ADDRESS>" })
   action  :mount_media_thinkserver
 end
 
 lxca_node 'retrieve_mounted_media_details' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'test'
-  login_password 'CME44ibm'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
-  uuid 'EAAC33576492E511B46A70E28412CA06'
+  uuid '<UUID>'
   action :retrieve_mounted_media_details
 end
 
 lxca_node 'unmount_media_thinkserver' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'test'
-  login_password 'CME44ibm'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
-  uuid 'EAAC33576492E511B46A70E28412CA06'
+  uuid '<UUID>'
   media_type 'CD/DVD'
   action :unmount_media_thinkserver
 end
 
 lxca_node 'disable_media_mount_support_thinkserver' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'test'
-  login_password 'CME44ibm'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
-  uuid 'EAAC33576492E511B46A70E28412CA06'
+  uuid '<UUID>'
   action :disable_media_mount_support_thinkserver
 end
 
 lxca_node 'retrieve_mounted_media_details' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'test'
-  login_password 'CME44ibm'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
-  uuid 'EAAC33576492E511B46A70E28412CA06'
+  uuid '<UUID>'
   action :retrieve_mounted_media_details
 end
 
 # valid mediaType values are 'CD/DVD', 'FD', 'HD'
 # valid shareType values for thinkserver are 'nfs', 'samba'
 lxca_node 'mount_media_thinksystem' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'test'
-  login_password 'CME44ibm'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
-  uuid 'FAA6E3D494E511E6A0739B91ED670CE8'
-  opts ({ :username           => "SYSRDR_PUXNIOCA",
-          :password           => "cm3Oaj-jQPYE5Ridqx8StVN3LX3dHA",
+  uuid '<UUID>'
+  opts ({ :username           => "<DEVICE_USERNAME>",
+          :password           => "<DEVICE_PASSWORD>",
           :shareType          => "samba",
           :mediaLocation      => "/think/node55A6541A199.iso",
           :mediaType          => "CD/DVD",
           :domainName         => "",
-          :mediaServerAddress => "10.240.29.217" })
+          :mediaServerAddress => "<IP_ADDRESS>" })
   action  :mount_media_thinksystem
 end
 
 lxca_node 'mount_media_thinksystem' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'test'
-  login_password 'CME44ibm'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
-  uuid 'FAA6E3D494E511E6A0739B91ED670CE8'
+  uuid '<UUID>'
   opts ({
           :domainName         => "",
           :username           => "",
@@ -260,50 +260,50 @@ lxca_node 'mount_media_thinksystem' do
           :shareType          => "nfs",
           :mediaLocation      => "/var/nfs/general/ubuntu-16.04.5-desktop-amd64.iso",
           :mediaType          => "CD/DVD",
-          :mediaServerAddress => "10.240.29.69" })
+          :mediaServerAddress => "<IP_ADDRESS>" })
   action  :mount_media_thinksystem
 end
 
 
 lxca_node 'retrieve_mounted_media_details' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'test'
-  login_password 'CME44ibm'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
-  uuid 'FAA6E3D494E511E6A0739B91ED670CE8'
+  uuid '<UUID>'
   action :retrieve_mounted_media_details
 end
 
 
 lxca_node 'unmount_media_thinksystem' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'test'
-  login_password 'CME44ibm'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
-  uuid 'FAA6E3D494E511E6A0739B91ED670CE8'
+  uuid '<UUID>'
   media_uid '1'
   action :unmount_media_thinksystem
 end
 
 lxca_node 'remove_all_mounted_medias_thinksystem' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'test'
-  login_password 'CME44ibm'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
-  uuid 'FAA6E3D494E511E6A0739B91ED670CE8'
+  uuid '<UUID>'
   action :remove_all_mounted_medias_thinksystem
 end
 
 lxca_node 'retrieve_mounted_media_details' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'test'
-  login_password 'CME44ibm'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
-  uuid 'FAA6E3D494E511E6A0739B91ED670CE8'
+  uuid '<UUID>'
   action :retrieve_mounted_media_details
 end
 

@@ -25,39 +25,39 @@
 # Recipe:: lxca_chassis
 
 lxca_chassis 'list_all' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'USERID'
-  login_password 'Passw0rd'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   action :discover_all
 end
 
 lxca_chassis 'list_managed' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'USERID'
-  login_password 'Passw0rd'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   action :discover_managed
 end
 
 lxca_chassis 'list_unmanaged' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'USERID'
-  login_password 'Passw0rd'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   action :discover_unmanaged
 end
 
 lxca_chassis 'filter_by_uuid' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'USERID'
-  login_password 'Passw0rd'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
-  uuid 'EF6D424FAACA4E539771B812AAEE0F73'
+  uuid '<UUID>'
   action :filter_by_uuid
 end
 

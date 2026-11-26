@@ -25,12 +25,12 @@
 # Recipe:: lxca_remote_access
 
 lxca_remote_access 'get_by_uuid' do
-  host 'https://10.243.30.238'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'USERID'
-  login_password 'Passw0rd'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   action :get_by_uuid
-  uuid 'FAA6E3D494E511E6A0739B91ED670CE8'
+  uuid '<UUID>'
 end
 

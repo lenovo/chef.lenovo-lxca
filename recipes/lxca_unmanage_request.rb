@@ -25,22 +25,22 @@
 # Recipe:: lxca_unmanage_request
 
 lxca_unmanage_request 'fetch_unmanage_request' do
-  host 'https://10.243.13.140'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'USERID'
-  login_password 'Passw0rd'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   job_id '4253'
   action :fetch_unmanage_request
 end
 
 lxca_unmanage_request 'unmanage_discovered_devices' do
-  host 'https://10.243.13.140'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'USERID'
-  login_password 'Passw0rd'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
-  endpoints [{"ipAddresses"=>["10.243.8.28"],"type"=>"Chassis","uuid"=>"792812BA57B24337821B72AC27CF2055"}]
+  endpoints [{"ipAddresses"=>["<IP_ADDRESS>"],"type"=>"Chassis","uuid"=>"<UUID>"}]
   force 'True'
   action :unmanage_discovered_devices
 end

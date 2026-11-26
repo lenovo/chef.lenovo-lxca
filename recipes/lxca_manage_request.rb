@@ -25,25 +25,25 @@
 # Recipe:: lxca_manage_request
 
 lxca_manage_request 'fetch_manage_request' do
-  host 'https://10.243.13.140'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'USERID'
-  login_password 'Passw0rd'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   job_id '4191'
   action :fetch_manage_request
 end
 
 lxca_manage_request 'manage_discovered_devices' do
-  host 'https://10.243.13.140'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'USERID'
-  login_password 'Passw0rd'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
-  ip_address ['10.243.8.28']
-  username 'USERID'
-  password 'CME44ibm'
-  recovery_password 'CME55ibm'
+  ip_address ['<IP_ADDRESS>']
+  username '<LXCA_USERNAME>'
+  password '<LXCA_PASSWORD>'
+  recovery_password '<LXCA_RECOVERY_PASSWORD>'
   force 'True'
   action :manage_discovered_devices
 end

@@ -25,61 +25,61 @@
 # Recipe:: lxca_update_policy
 
 lxca_update_policy 'discover_update_policy' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'USERID'
-  login_password 'Passw0rd'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   action 'discover_update_policy'
 end
 
 lxca_update_policy 'discover_application_firmware' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'USERID'
-  login_password 'Passw0rd'
-  verify_ssl 'NONE'  
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
+  verify_ssl 'NONE'
   action 'discover_application_firmware'
 end
 
 lxca_update_policy 'discover_persisted_compare_results' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'USERID'
-  login_password 'Passw0rd'
-  verify_ssl 'NONE'  
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
+  verify_ssl 'NONE'
   action 'discover_persisted_compare_results'
 end
 
 lxca_update_policy 'discover_compare_results' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'USERID'
-  login_password 'Passw0rd'
-  verify_ssl 'NONE'  
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
+  verify_ssl 'NONE'
   action 'discover_compare_results'
   jobid '5'
 end
 
 lxca_update_policy 'assign_compliance_policy' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'USERID'
-  login_password 'Passw0rd'
-  verify_ssl 'NONE'  
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
+  verify_ssl 'NONE'
   action 'assign_compliance_policy'
   policy_name 'mantest'
   type 'SERVER'
-  uuid 'AB6C2B0F827811E29C8B3440B5EAB968'
+  uuid '<UUID>'
   auto_assign 'true'
 end
 
 lxca_update_policy 'delete_compliance_policy' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'USERID'
-  login_password 'Passw0rd'
-  verify_ssl 'NONE'  
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
+  verify_ssl 'NONE'
   action 'delete_compliance_policy'
   policy_name 'valid2'
   remove_package 'true'

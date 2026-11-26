@@ -25,48 +25,48 @@
 # Recipe:: lxca_update_repo
 
 lxca_update_repo 'discover_update_repo' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'test'
-  login_password 'CME44ibm'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   action 'discover_update_repo'
   key 'lastRefreshed'
 end
 
 lxca_update_repo 'read_update_repo' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'test'
-  login_password 'CME44ibm'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   action 'read_update_repo'
 end
 
 lxca_update_repo 'supported_machine_types_detail' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'test'
-  login_password 'CME44ibm'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   action 'supported_machine_types_detail'
 end
 
 lxca_update_repo 'updates_info_by_machine_types' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'test'
-  login_password 'CME44ibm'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   action 'updates_info_by_machine_types'
   machine_types ["7X84"]
 end
 
 lxca_update_repo 'refresh_update_repo_catalog' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'test'
-  login_password 'CME44ibm'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   action 'refresh_update_repo_catalog'
   scope 'all'
@@ -74,10 +74,10 @@ lxca_update_repo 'refresh_update_repo_catalog' do
 end
 
 lxca_update_repo 'acquire_firmware_updates' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'test'
-  login_password 'CME44ibm'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   action 'acquire_firmware_updates'
   machine_types ['7X84']
@@ -85,10 +85,10 @@ lxca_update_repo 'acquire_firmware_updates' do
 end
 
 lxca_update_repo 'export_firmware_updates' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'test'
-  login_password 'CME44ibm'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   action 'export_firmware_updates'
   file_types 'payloads'
@@ -96,10 +96,10 @@ lxca_update_repo 'export_firmware_updates' do
 end
 
 lxca_update_repo 'download_exported_firmware_updates' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'test'
-  login_password 'CME44ibm'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   action 'download_exported_firmware_updates'
   file_name 'repository20190207033040.zip'
@@ -107,20 +107,20 @@ lxca_update_repo 'download_exported_firmware_updates' do
 end
 
 lxca_update_repo 'validate_import_updates' do
-  host 'https://10.240.29.215'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'test'
-  login_password 'CME44ibm'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   action 'validate_import_updates'
   file_path '/home/lenovo/repository20190207033040.zip'
 end
 
 lxca_update_repo 'import_firmware_updates' do
-  host 'https://10.240.29.215'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'test'
-  login_password 'CME44ibm'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   action 'import_firmware_updates'
   file_path '/home/lenovo/repository20190207033040.zip'
@@ -130,10 +130,10 @@ end
 #       task_type for acquire updates task is 'ACQUIREPAYLOAD'
 #       task_type for export updates task is 'EXPORTREPOSITORY'
 lxca_update_repo 'track_task_status' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'test'
-  login_password 'CME44ibm'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   action 'track_task_status'
   task_id '102'
@@ -141,10 +141,10 @@ lxca_update_repo 'track_task_status' do
 end
 
 lxca_update_repo 'refresh_uxsp_update_repo_catalog' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'test'
-  login_password 'CME44ibm'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   action 'refresh_uxsp_update_repo_catalog'
   scope 'latest'
@@ -152,39 +152,39 @@ lxca_update_repo 'refresh_uxsp_update_repo_catalog' do
 end
 
 lxca_update_repo 'uxsp_updates_info_by_machine_types' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'test'
-  login_password 'CME44ibm'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   action 'uxsp_updates_info_by_machine_types'
   machine_types ["7X84"]
 end
 
 lxca_update_repo 'retrieve_compliance_policy_list' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'test'
-  login_password 'CME44ibm'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   action 'retrieve_compliance_policy_list'
 end
 
 lxca_update_repo 'export_compliance_policies' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'test'
-  login_password 'CME44ibm'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   action 'export_compliance_policies'
   policy_names ['DEFAULT-Thinksystem-Servers-2018-04-02', '1.00-mrsp00p-thinkagile_hx-uxsp']
 end
 
 lxca_update_repo 'download_exported_compliance_policies' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'test'
-  login_password 'CME44ibm'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   action 'download_exported_compliance_policies'
   file_name 'policies2019020704501106.zip'
@@ -192,20 +192,20 @@ lxca_update_repo 'download_exported_compliance_policies' do
 end
 
 lxca_update_repo 'import_compliance_policies' do
-  host 'https://10.240.29.215'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'test'
-  login_password 'CME44ibm'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   action 'import_compliance_policies'
   file_path '/home/lenovo/policies2019020704501106.zip'
 end
 
 lxca_update_repo 'delete_firmware_updates' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'test'
-  login_password 'CME44ibm'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   action 'delete_firmware_updates'
   file_types 'all'

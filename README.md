@@ -66,34 +66,34 @@ A sample recipe is given below
 
 ```
 lxca_node 'list_all' do
-  base_url 'https://10.243.10.75'
-  login_user 'Admin'
-  login_password 'Admin123'
+  base_url 'https://<LXCA_HOST>'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   action :discover_all
 end
 
 lxca_node 'blink_led' do
-  base_url 'https://10.243.10.75'
-  login_user 'Admin'
-  login_password 'Admin123'
+  base_url 'https://<LXCA_HOST>'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
-  uuid 'FA59C0BBC43C3C15B9D72B94AFF52B91'
+  uuid '<UUID>'
   action :blink_led
 end
 
 lxca_chassis 'list_managed' do
-  base_url 'https://10.243.10.75'
-  login_user 'Admin'
-  login_password 'Admin123'
+  base_url 'https://<LXCA_HOST>'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   action :discover_managed
 end
 
 lxca_chassis 'filter_by_uuid' do
-  base_url 'https://10.243.10.75'
-  login_user 'Admin'
-  login_password 'Admin123'
+  base_url 'https://<LXCA_HOST>'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   action :filter_by_uuid
 end

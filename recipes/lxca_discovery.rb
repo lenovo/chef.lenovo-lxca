@@ -25,10 +25,10 @@
 # Recipe:: lxca_discovery
 
 lxca_discovery 'discover_devices_by_slp' do
-  host 'https://10.240.29.217'
+  host 'https://<LXCA_HOST>'
   port '443'
-  login_user 'USERID'
-  login_password 'Passw0rd'
+  login_user '<LXCA_USERNAME>'
+  login_password '<LXCA_PASSWORD>'
   verify_ssl 'NONE'
   action :discover_devices_by_slp
 end
